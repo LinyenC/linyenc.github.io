@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/my-favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/my-favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jupyter," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="jupyter notebook的默认主题不太好看，要更换主题，可以安装jupyter的主题插件，网上搜一下就有相关的方法介绍。而这里我要介绍的是另一种方法，就是通过浏览器插件来变换主题。 主题展示先给大家看一下修改主题后的页面。   操作过程首先要在谷歌浏览器或EI浏览器上安装一个叫“stylish”的插件，其图标如下图所示，这是一个管理主题代码的插件，跟油猴的功能有点类似。   安装好后就可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修改 jupyter notebook 主题">
+<meta property="og:url" content="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/index.html">
+<meta property="og:site_name" content="linyen&#39;s blog">
+<meta property="og:description" content="jupyter notebook的默认主题不太好看，要更换主题，可以安装jupyter的主题插件，网上搜一下就有相关的方法介绍。而这里我要介绍的是另一种方法，就是通过浏览器插件来变换主题。 主题展示先给大家看一下修改主题后的页面。   操作过程首先要在谷歌浏览器或EI浏览器上安装一个叫“stylish”的插件，其图标如下图所示，这是一个管理主题代码的插件，跟油猴的功能有点类似。   安装好后就可以">
+<meta property="og:locale">
+<meta property="og:image" content="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/HOME%E9%A1%B5%E9%9D%A2.png">
+<meta property="og:image" content="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/%E4%BB%A3%E7%A0%81%E9%A1%B5%E9%9D%A2.png">
+<meta property="og:image" content="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/插件.png">
+<meta property="og:image" content="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/所选样式.png">
+<meta property="og:image" content="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/%E6%A0%B7%E5%BC%8F%E7%AE%A1%E7%90%86.png">
+<meta property="article:published_time" content="2021-06-17T04:18:46.000Z">
+<meta property="article:modified_time" content="2021-06-17T05:47:36.257Z">
+<meta property="article:author" content="linyen">
+<meta property="article:tag" content="jupyter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/HOME%E9%A1%B5%E9%9D%A2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/06/17/修改-jupyter-notebook-主题/"/>
+
+
+
+
+
+  <title>修改 jupyter notebook 主题 | linyen's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">linyen's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">ABC</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="linyen's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">修改 jupyter notebook 主题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-17T12:18:46+08:00">
+                2021-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>jupyter notebook的默认主题不太好看，要更换主题，可以安装jupyter的主题插件，网上搜一下就有相关的方法介绍。而这里我要介绍的是另一种方法，就是通过浏览器插件来变换主题。</p>
+<h1 id="主题展示"><a href="#主题展示" class="headerlink" title="主题展示"></a>主题展示</h1><p>先给大家看一下修改主题后的页面。</p>
+<p><img src="/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/HOME%E9%A1%B5%E9%9D%A2.png" alt="HOME页面样式管理"></p>
+<p><img src="/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/%E4%BB%A3%E7%A0%81%E9%A1%B5%E9%9D%A2.png" alt="代码页面"></p>
+<h1 id="操作过程"><a href="#操作过程" class="headerlink" title="操作过程"></a>操作过程</h1><p>首先要在谷歌浏览器或EI浏览器上安装一个叫“stylish”的插件，其图标如下图所示，这是一个管理主题代码的插件，跟油猴的功能有点类似。</p>
+<img src="/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/插件.png" alt="插件" style="zoom:100%;">
+
+<p>安装好后就可以在它网站上（<a target="_blank" rel="noopener" href="https://userstyles.org）搜索我们想要的各种网站的主题。我们在上面搜索jupyter">https://userstyles.org）搜索我们想要的各种网站的主题。我们在上面搜索jupyter</a> notebook，就会出来别人写好的关于jupyter notebook的各种主题，然后安装自己喜欢的主题就好了。经过对比，我选择了下图的这个主题。</p>
+<img src="/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/所选样式.png" alt="主题" style="zoom:100%;">
+
+<p>但是其中还有一些不如我意的地方，因此我对它的代码进行了一些修改。先左击浏览器上“stylish”插件的图标，然后再左击那三个竖着的点，点管理样式，就进入到样式管理页面，在那里可以对已安装的主题进行管理，包括修改代码。</p>
+<p><img src="/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/%E6%A0%B7%E5%BC%8F%E7%AE%A1%E7%90%86.png" alt="样式管理"></p>
+<p>下面附上我修改后的全部主题代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Uncomment to use a custom font */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#notebook</span>, <span class="selector-tag">div</span><span class="selector-class">.CodeMirror</span>, <span class="selector-tag">div</span><span class="selector-class">.output_area</span> <span class="selector-tag">pre</span>, <span class="selector-tag">div</span><span class="selector-class">.output_wrapper</span>, <span class="selector-tag">div</span><span class="selector-class">.prompt</span> &#123;</span><br><span class="line">   <span class="attribute">font-family</span>: <span class="string">&#x27;mononoki&#x27;</span>, <span class="string">&#x27;Meslo LG S&#x27;</span>, monospace <span class="meta">!important</span>;</span><br><span class="line">   <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.notebook_app</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#333</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#notebook</span> &#123;<span class="attribute">background-color</span>: <span class="number">#101010</span> <span class="meta">!important</span>; <span class="attribute">border-top</span>: none;&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#notebook-container</span> &#123;<span class="attribute">background-color</span>: <span class="number">#101010</span>;&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#header-container</span> &#123; <span class="attribute">display</span>: none;  &#125;</span><br><span class="line"><span class="comment">/* div#maintoolbar &#123; display: none !important; &#125; */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.output</span><span class="selector-class">.output_scroll</span> &#123;</span><br><span class="line">    <span class="attribute">box-shadow</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*Scroll bars*/</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">12px</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Handle */</span></span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span> &#123;</span><br><span class="line">	    <span class="attribute">-webkit-border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">	    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">	    <span class="attribute">background</span>: <span class="number">#484848</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-pseudo">::-webkit-scrollbar-thumb</span><span class="selector-pseudo">:window-inactive</span> &#123;</span><br><span class="line">	<span class="attribute">background</span>: <span class="number">#484848</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* .container &#123;</span></span><br><span class="line"><span class="comment">    width: 99% !important;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">99%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span><span class="selector-class">.nbextensions_configurator_page</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#308030</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-id">#site</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#051005</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.terminal-app</span> <span class="selector-class">.terminal</span>, <span class="selector-class">.terminal-app</span> <span class="selector-class">.terminal</span> <span class="selector-tag">dummy-screen</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1em</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">&#x27;Consolas&#x27;</span>, monospace <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*########################*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* GLOBALS */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">background-color</span>: <span class="number">#1e1e1e</span>;&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="comment">/*color: #87a6fc;*/</span></span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#509050</span>;</span><br><span class="line">	<span class="attribute">text-decoration</span>: none <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">	<span class="comment">/*color: #1372c8;*/</span></span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#5f5</span>;</span><br><span class="line">	<span class="attribute">text-shadow</span>: -<span class="number">1px</span> <span class="number">1px</span> <span class="number">8px</span> <span class="number">#555</span>, <span class="number">1px</span> -<span class="number">1px</span> <span class="number">8px</span> <span class="number">#555</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* INTRO PAGE */</span></span><br><span class="line"><span class="selector-class">.toolbar_info</span>, <span class="selector-class">.list_container</span> &#123;<span class="attribute">color</span>: <span class="number">#c3c3c3</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* NOTEBOOK */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* comment out this line to bring the toolbar back */</span></span><br><span class="line"><span class="comment">/* div#maintoolbar, div#header &#123;display: none !important;&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.input_prompt</span> &#123;<span class="attribute">color</span>: <span class="number">#567ff6</span>;&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.output_prompt</span> &#123;<span class="attribute">color</span>: <span class="number">#50a050</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.input_area</span> &#123;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#303040</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.output_area</span> <span class="selector-tag">pre</span> &#123;<span class="attribute">font-weight</span>: normal; <span class="attribute">color</span>: <span class="number">#a7a7a7</span>;&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.output_subarea</span> &#123;<span class="attribute">font-weight</span>: normal; <span class="attribute">color</span>: <span class="number">#a7a7a7</span>;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-class">.raw_input</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: inherit;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: inherit;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">75%</span>;</span><br><span class="line">    <span class="attribute">vertical-align</span>: baseline;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0em</span> <span class="number">0.25em</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0em</span> <span class="number">0.25em</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#30a030</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#202020</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#202020</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.edit_mode</span> <span class="selector-tag">div</span><span class="selector-class">.cell</span><span class="selector-class">.selected</span> &#123;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#408040</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">border-left-width</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, #<span class="number">408040</span> -<span class="number">40px</span>, #<span class="number">408040</span> <span class="number">5px</span>, transparent <span class="number">5px</span>, transparent <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.rendered_html</span> <span class="selector-tag">table</span>, <span class="selector-class">.rendered_html</span> <span class="selector-tag">th</span>, <span class="selector-class">.rendered_html</span> <span class="selector-tag">tr</span>, <span class="selector-class">.rendered_html</span> <span class="selector-tag">td</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span>  <span class="number">#f05070</span> solid;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#a7a7a7</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.output_html</span> &#123; <span class="attribute">font-family</span>: sans-serif; &#125;</span><br><span class="line"><span class="selector-tag">table</span><span class="selector-class">.dataframe</span> <span class="selector-tag">tr</span> &#123;<span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#a7a7a7</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.cell</span><span class="selector-class">.selected</span> &#123;</span><br><span class="line">	<span class="attribute">border-radius</span>: <span class="number">0px</span>; </span><br><span class="line">	<span class="attribute">border-left-width</span>: <span class="number">3px</span> <span class="meta">!important</span>; </span><br><span class="line">	<span class="attribute">border-color</span>: <span class="number">#2e61c8</span> <span class="meta">!important</span>; </span><br><span class="line">	<span class="attribute">padding-left</span>: <span class="number">0px</span> <span class="meta">!important</span>;</span><br><span class="line">	<span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to right, #<span class="number">2</span>e61c8 -<span class="number">40px</span>, #<span class="number">2</span>e61c8 <span class="number">5px</span>, transparent <span class="number">5px</span>, transparent <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.cell</span> &#123;</span><br><span class="line">	<span class="attribute">padding-left</span>: <span class="number">2px</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.text_cell_render</span>, <span class="selector-tag">div</span><span class="selector-class">.output_html</span> &#123;<span class="attribute">color</span>: <span class="number">#b7b7b7</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.ansiblack</span> &#123;<span class="attribute">color</span>: <span class="number">#323537</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.ansiblue</span> &#123;<span class="attribute">color</span>: <span class="number">#afc4db</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.ansigray</span> &#123;<span class="attribute">color</span>: <span class="number">#838184</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.ansigreen</span> &#123;<span class="attribute">color</span>: <span class="number">#8f9d6a</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.ansipurple</span> &#123;<span class="attribute">color</span>: <span class="number">#9b859d</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.ansired</span> &#123;<span class="attribute">color</span>: <span class="number">#cf6a4c</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.ansiyellow</span> &#123;<span class="attribute">color</span>: <span class="number">#f9ee98</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.output_stderr</span> &#123;<span class="attribute">background-color</span>: <span class="number">#050505</span>;&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.output_stderr</span> <span class="selector-tag">pre</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#509050</span>; </span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-s-ipython</span><span class="selector-class">.CodeMirror</span> &#123;</span><br><span class="line">	<span class="attribute">background</span>: <span class="number">#191919</span>; </span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#c3c3c3</span>;</span><br><span class="line">	&#125;	</span><br><span class="line"><span class="comment">/*----------*/</span>	</span><br><span class="line"><span class="selector-class">.CodeMirror</span> &#123; <span class="attribute">color</span>: <span class="number">#b3b3b3</span> <span class="meta">!important</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span><span class="selector-class">.CodeMirror</span> &#123;<span class="attribute">background</span>: <span class="number">#1d1f21</span>; <span class="attribute">color</span>: <span class="number">#e0e0e0</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">div</span><span class="selector-class">.CodeMirror-selected</span> &#123;<span class="attribute">background</span>: <span class="number">#223b54</span> <span class="meta">!important</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-class">.CodeMirror-gutters</span> &#123;<span class="attribute">background</span>: <span class="number">#0b1c2c</span>; <span class="attribute">border-right</span>: <span class="number">0px</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-class">.CodeMirror-linenumber</span> &#123;<span class="attribute">color</span>: <span class="number">#627e99</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-class">.CodeMirror-cursor</span> &#123;<span class="attribute">border-left</span>: <span class="number">2px</span> solid <span class="number">#aabcce</span> <span class="meta">!important</span>;&#125;</span><br><span class="line"><span class="selector-class">.CodeMirror-cursor</span> &#123;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">2px</span> solid <span class="number">#aabcce</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-comment</span> &#123;<span class="attribute">color</span>: <span class="number">#606060</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-atom</span> &#123;<span class="attribute">color</span>: <span class="number">#bf568b</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-number</span> &#123;<span class="attribute">color</span>: <span class="number">#ca6840</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-property</span>, <span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-attribute</span> &#123;<span class="attribute">color</span>: <span class="number">#4e97ca</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-keyword</span> &#123;<span class="attribute">color</span>: <span class="number">#bf8b56</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-string</span> &#123;<span class="attribute">color</span>: <span class="number">#7a7a25</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-operator</span> &#123;<span class="attribute">color</span>: <span class="number">#afc4db</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-builtin</span> &#123;<span class="attribute">color</span>: <span class="number">#008ecd</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-variable</span> &#123;<span class="attribute">color</span>: <span class="number">#56a08b</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-variable-2</span> &#123;<span class="attribute">color</span>: <span class="number">#7587a6</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-def</span> &#123;<span class="attribute">color</span>: <span class="number">#bfbf56</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-error</span> &#123;<span class="attribute">background</span>: <span class="number">#212121</span>; <span class="attribute">color</span>: <span class="number">#aa3030</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-bracket</span> &#123;<span class="attribute">color</span>: <span class="number">#cbd6e2</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-tag</span> &#123;<span class="attribute">color</span>: <span class="number">#bf8b56</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-tag">span</span><span class="selector-class">.cm-link</span> &#123;<span class="attribute">color</span>: <span class="number">#bf568b</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-class">.CodeMirror-matchingbracket</span> &#123; <span class="attribute">text-decoration</span>: underline; </span><br><span class="line">	color: #30b030 !important; background-color: #304020 !important;;&#125;</span><br><span class="line"><span class="comment">/*----------*/</span>		</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-atom</span> &#123; <span class="attribute">color</span>: <span class="number">#7E72CE</span>; &#125;</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-link</span> &#123;<span class="attribute">color</span>: <span class="number">#3974dd</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-string</span> &#123;<span class="attribute">color</span>: <span class="number">#de846c</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-header</span> &#123;<span class="attribute">color</span>: <span class="number">#1090f0</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-attribute</span> &#123;<span class="attribute">color</span>: <span class="number">#1090f0</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-variable-2</span> &#123;<span class="attribute">color</span>: <span class="number">#00c0e0</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-variable-3</span> &#123;<span class="attribute">color</span>: <span class="number">#00c070</span>;&#125;</span><br><span class="line"><span class="selector-class">.cm-s-default</span> <span class="selector-class">.cm-keyword</span> &#123;<span class="attribute">color</span>: <span class="number">#c6c24D</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*----------*/</span>	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.btn-group</span> &gt; <span class="selector-class">.btn</span>,</span><br><span class="line"><span class="selector-class">.form-control</span>,</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#header</span>,</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.navbar-collapse</span>,</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#notebook-container</span>,</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#notebook</span>,</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#complete</span> &gt; <span class="selector-tag">select</span>,</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#notification_notebook</span>,</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#notification_kernel</span>,</span><br><span class="line"><span class="selector-tag">li</span> &gt; <span class="selector-class">.dropdown-menu</span>,</span><br><span class="line"><span class="selector-class">.dropdown-menu</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.dropdown-menu</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#4080ca</span>;</span><br><span class="line">	<span class="attribute">border-color</span>: <span class="number">#303040</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#141414</span>; <span class="comment">/* Main bg color is here */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dropdown-menu</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#4878ca</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#1e1e1e</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dropdown</span>,</span><br><span class="line"><span class="selector-class">.dropdown</span><span class="selector-class">.open</span>,</span><br><span class="line"><span class="selector-class">.dropdown-menu</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: silver;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#1e1e1e</span>;</span><br><span class="line">	<span class="comment">/*border: 1px silver;*/</span></span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.dropdown-menu</span> <span class="selector-class">.divider</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">8px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#2e2e2e</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.navbar-default</span> <span class="selector-class">.navbar-nav</span> &gt; <span class="selector-class">.open</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.navbar-default</span> <span class="selector-class">.navbar-nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: silver;</span><br><span class="line">	<span class="comment">/*background-color: #202020;*/</span></span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#5050c0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.navbar-default</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#303080</span>;</span><br><span class="line">	<span class="attribute">border-color</span>: <span class="number">#2e2e2e</span> <span class="meta">!important</span>;</span><br><span class="line">	<span class="comment">/*color: #4878ca !important;*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.navbar-default</span> <span class="selector-class">.navbar-nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#4878ca</span> <span class="meta">!important</span>;  <span class="comment">/* Menu text color */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* special hack for convertor to html */</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-class">.input_area</span> &#123; <span class="attribute">background</span>: <span class="number">#1e1e1e</span> <span class="meta">!important</span>; &#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.n</span> &#123;<span class="attribute">color</span>:<span class="number">#8f9d6a</span> <span class="meta">!important</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.s</span> &#123;<span class="attribute">color</span>:<span class="number">#f9ee98</span> <span class="meta">!important</span>;&#125;</span><br><span class="line"><span class="selector-tag">span</span><span class="selector-class">.p</span> &#123;<span class="attribute">color</span>:<span class="number">#9b703f</span> <span class="meta">!important</span>;&#125;</span><br><span class="line"><span class="selector-class">.highlight</span> &#123; <span class="attribute">background</span>: <span class="number">#292b2f</span> <span class="meta">!important</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.rendered_html</span> <span class="selector-tag">pre</span>, <span class="selector-class">.rendered_html</span> <span class="selector-tag">code</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#2e2e2e</span> <span class="meta">!important</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#60a060</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.rendered_html</span> * + <span class="selector-tag">ol</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0em</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.rendered_html</span> * + <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0em</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">1em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Scratchpad style */</span></span><br><span class="line"><span class="selector-id">#nbextension-scratchpad</span> <span class="selector-class">.cell-wrapper</span> &#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">overflow</span>: auto;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#101010</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#nbextension-scratchpad</span> &#123;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#400000</span>;</span><br><span class="line">	<span class="attribute">border-left</span>: <span class="number">2px</span> solid <span class="number">#107010</span> <span class="meta">!important</span>;</span><br><span class="line">	<span class="attribute">border-top</span>:  <span class="number">2px</span> solid <span class="number">#107010</span> <span class="meta">!important</span>;</span><br><span class="line">	<span class="attribute">z-index</span>: <span class="number">9000</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#pager</span> &#123;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#505050</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#pager</span> <span class="selector-tag">pre</span> &#123;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">1.21429em</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#8dc5e9</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#181818</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0.4em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* ------------------------------- Tree navigator -------------------------- */</span></span><br><span class="line"><span class="selector-class">.list_header</span> &#123;</span><br><span class="line">	<span class="attribute">font-weight</span>: bold;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#1e1e1e</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.list_container</span> &#123;</span><br><span class="line">	<span class="attribute">margin-top</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#353535</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.list_container</span> &gt; <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#353535</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.list_item</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#17223c</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.dynamic-instructions</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: inline-block;</span><br><span class="line">	<span class="attribute">padding-top</span>: <span class="number">4px</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#6e6e84</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.nav-tabs</span> &gt; <span class="selector-tag">li</span><span class="selector-class">.active</span> &gt; <span class="selector-tag">a</span>, <span class="selector-class">.nav-tabs</span> &gt; <span class="selector-tag">li</span><span class="selector-class">.active</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-class">.nav-tabs</span> &gt; <span class="selector-tag">li</span><span class="selector-class">.active</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#B7AAAA</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#570712</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#9C1430</span>;</span><br><span class="line">	<span class="attribute">border-bottom-color</span>: <span class="number">#480101</span>;</span><br><span class="line">	<span class="attribute">cursor</span>: default;</span><br><span class="line">	<span class="attribute">outline</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.nav-tabs</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">border-color</span>: <span class="number">#350808</span> <span class="number">#350808</span> <span class="number">#350808</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>, <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">	<span class="attribute">text-decoration</span>: none;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#311</span>;</span><br><span class="line">	<span class="attribute">color</span>: darkgray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: sienna;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.nav-tabs</span> &#123;</span><br><span class="line">	<span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#2c2929</span>;</span><br><span class="line">	<span class="attribute">background</span>: <span class="number">#480b0b</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.btn-default</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#CCC3C3</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#333d68</span>;</span><br><span class="line">	<span class="attribute">border-color</span>: <span class="number">#787881</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.btn-default</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#BFB7B7</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: <span class="number">#6a77b0</span>;</span><br><span class="line">	<span class="attribute">border-color</span>: <span class="number">#adadad</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="selector-tag">table</span><span class="selector-class">.dataframe</span>, <span class="selector-class">.dataframe</span> <span class="selector-tag">td</span>, <span class="selector-class">.dataframe</span> <span class="selector-tag">tr</span> &#123; </span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#003000</span>; <span class="attribute">border-collapse</span>: collapse; <span class="attribute">color</span>: <span class="number">#308030</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.rendered_html</span> <span class="selector-tag">tbody</span> <span class="selector-tag">tr</span><span class="selector-pseudo">:nth-child(2n+1)</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#102010</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.dataframe</span> <span class="selector-tag">th</span> &#123; </span><br><span class="line">	<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#003000</span>; <span class="attribute">border-collapse</span>: collapse; <span class="attribute">background-color</span>: <span class="number">#001800</span> <span class="meta">!important</span>; <span class="attribute">color</span>: <span class="number">#709070</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.cm-s-ipython</span> <span class="selector-class">.CodeMirror-linenumber</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#3A6218</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#201C1C</span>;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="selector-id">#texteditor-backdrop</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#102030</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#texteditor-backdrop</span> <span class="selector-id">#texteditor-container</span> <span class="selector-class">.CodeMirror-gutter</span>, <span class="selector-id">#texteditor-backdrop</span> <span class="selector-id">#texteditor-container</span> <span class="selector-class">.CodeMirror-gutters</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#201c1c</span>;</span><br><span class="line">&#125;	</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.timing_area</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">border</span>: none;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#104040</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">80%</span>;</span><br><span class="line">	  <span class="attribute">text-align</span>: right <span class="meta">!important</span>;</span><br><span class="line">&#125;	</span><br><span class="line">	</span><br><span class="line"><span class="comment">/* Tooltip */</span></span><br><span class="line"><span class="selector-class">.ipython_tooltip</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">700px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#303030</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">#106010</span> <span class="number">1px</span> solid;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">3px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">7px</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: monospace;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">6px</span> <span class="number">10px</span> -<span class="number">1px</span> <span class="number">#106010</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.tooltipbuttons</span> &#123;</span><br><span class="line">	color: red !important;;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="selector-class">.tooltiptext</span> <span class="selector-tag">pre</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">70%</span> <span class="meta">!important</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#303030</span> <span class="meta">!important</span>;</span><br><span class="line">	  <span class="attribute">color</span>: <span class="number">#a0a0a0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-fat-cursor</span> <span class="selector-class">.CodeMirror-cursor</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#4b5587</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-fat-cursor</span> <span class="selector-tag">div</span><span class="selector-class">.CodeMirror-cursors</span> &#123;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-searching</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#0aff0a</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">10</span>, <span class="number">255</span>, <span class="number">10</span>, .<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.cm-animate-fat-cursor</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">-webkit-animation</span>: blink <span class="number">1.06s</span> <span class="built_in">steps</span>(<span class="number">1</span>) infinite;</span><br><span class="line">  <span class="attribute">-moz-animation</span>: blink <span class="number">1.06s</span> <span class="built_in">steps</span>(<span class="number">1</span>) infinite;</span><br><span class="line">  <span class="attribute">animation</span>: blink <span class="number">1.06s</span> <span class="built_in">steps</span>(<span class="number">1</span>) infinite;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#4b5587</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.CodeMirror-gutters</span> &#123;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">1px</span> solid <span class="number">#444</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: transparent <span class="meta">!important</span>;</span><br><span class="line">	<span class="attribute">white-space</span>: nowrap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.CodeMirror-dialog</span> <span class="selector-tag">input</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: none;</span><br><span class="line">  <span class="attribute">outline</span>: none;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#000</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">99%</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#509040</span>;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;mononoki&#x27;</span>, <span class="string">&#x27;Meslo LG S&#x27;</span>, monospace <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* ============================================目录栏 ===========================*/</span></span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#toc-wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#242424</span>;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#242424</span>;</span><br><span class="line"><span class="comment">/*     top: 220px; */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.sidebar-wrapper</span> <span class="selector-class">.ui-resizable-e</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="built_in">calc</span>(<span class="number">50%</span> - <span class="number">8px</span>);</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#a94442</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc-wrapper</span> <span class="selector-class">.header</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#a94442</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc-header</span> <span class="selector-class">.fa</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#a94442</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.toc-item</span> &gt; <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#a94442</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc</span> <span class="selector-tag">a</span>, <span class="selector-id">#navigate_menu</span> <span class="selector-tag">a</span>, <span class="selector-class">.toc</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#a94442</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#toc-wrapper</span> <span class="selector-class">.toc-item-num</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#a94442</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*===============================插件页面======================================*/</span></span><br><span class="line"><span class="selector-tag">h3</span>, <span class="selector-class">.h3</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">23px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#FFFFFF</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.nbext-showhide-incompat</span> &#123;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0.5em</span>;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#FFFFFF</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-md-pull-6</span> &#123;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#FFFFFF</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-xs-12</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#FFFFFF</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.alert-warning</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#8a6d3b</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fcf8e3</span>;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#faebcc</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jupyter/" rel="tag"># jupyter</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/29/%E8%83%BD%E4%B8%8AQQ%EF%BC%8C%E4%BD%86%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" rel="next" title="能上QQ，但打不开网页的解决办法">
+                <i class="fa fa-chevron-left"></i> 能上QQ，但打不开网页的解决办法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/LinyenC" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E5%B1%95%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">主题展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">操作过程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">linyen</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">5.3k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
