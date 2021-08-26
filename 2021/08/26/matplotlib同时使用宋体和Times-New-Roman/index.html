@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="网络," />
+  <meta name="keywords" content="python,matplotlib," />
 
 
 
@@ -79,20 +79,21 @@
 
 
 
-<meta name="description" content="参考：只能上QQ，打不开网页怎么回事？ 感染了病毒所致这种情况往往表现在打开IE时，在IE界面的左下框里提示：正在打开网页，但老半天没响应。在任务管理器里查看进程，（进入方法，把鼠标放在任务栏上，按右键—任务管理器—进程）看看CPU的占用率如何，如果是100%，可以肯定，是感染了病毒，这时你想运行其他程序简直就是受罪。这就要查查是哪个进程贪婪地占用了CPU资源。  找到后，最好把名称记录下来，然后">
+<meta name="description" content="一般论文要求中文宋体、西文Times New Roman，但是matplotlib并没有现成的这个字体，也不能在全局字体设置中将中文、西文分别设置。目前网上的方法主要是两种，一种是寻找近似字体来替代，比如方正宋体，但多多少少还是会有差别；另一种是自己将宋体和Times New Roman合并，制作一个新的字体“TimesSong”。 我自己选择了第二种方法，制作了“TimesSong”字体，但是在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="能上QQ，但打不开网页的解决办法">
-<meta property="og:url" content="http://yoursite.com/2021/05/29/%E8%83%BD%E4%B8%8AQQ%EF%BC%8C%E4%BD%86%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/index.html">
+<meta property="og:title" content="matplotlib同时使用宋体和Times New Roman">
+<meta property="og:url" content="http://yoursite.com/2021/08/26/matplotlib%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E5%AE%8B%E4%BD%93%E5%92%8CTimes-New-Roman/index.html">
 <meta property="og:site_name" content="linyen&#39;s blog">
-<meta property="og:description" content="参考：只能上QQ，打不开网页怎么回事？ 感染了病毒所致这种情况往往表现在打开IE时，在IE界面的左下框里提示：正在打开网页，但老半天没响应。在任务管理器里查看进程，（进入方法，把鼠标放在任务栏上，按右键—任务管理器—进程）看看CPU的占用率如何，如果是100%，可以肯定，是感染了病毒，这时你想运行其他程序简直就是受罪。这就要查查是哪个进程贪婪地占用了CPU资源。  找到后，最好把名称记录下来，然后">
+<meta property="og:description" content="一般论文要求中文宋体、西文Times New Roman，但是matplotlib并没有现成的这个字体，也不能在全局字体设置中将中文、西文分别设置。目前网上的方法主要是两种，一种是寻找近似字体来替代，比如方正宋体，但多多少少还是会有差别；另一种是自己将宋体和Times New Roman合并，制作一个新的字体“TimesSong”。 我自己选择了第二种方法，制作了“TimesSong”字体，但是在">
 <meta property="og:locale">
-<meta property="og:image" content="http://yoursite.com/2021/05/29/%E8%83%BD%E4%B8%8AQQ%EF%BC%8C%E4%BD%86%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg">
-<meta property="article:published_time" content="2021-05-29T05:21:43.000Z">
-<meta property="article:modified_time" content="2021-05-29T12:07:34.346Z">
+<meta property="og:image" content="http://yoursite.com/2021/08/26/matplotlib%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E5%AE%8B%E4%BD%93%E5%92%8CTimes-New-Roman/test.jpg">
+<meta property="article:published_time" content="2021-08-26T13:49:39.000Z">
+<meta property="article:modified_time" content="2021-08-26T14:35:44.051Z">
 <meta property="article:author" content="linyen">
-<meta property="article:tag" content="网络">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="matplotlib">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2021/05/29/%E8%83%BD%E4%B8%8AQQ%EF%BC%8C%E4%BD%86%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2021/08/26/matplotlib%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E5%AE%8B%E4%BD%93%E5%92%8CTimes-New-Roman/test.jpg">
 
 
 
@@ -122,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2021/05/29/能上QQ，但打不开网页的解决办法/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/08/26/matplotlib同时使用宋体和Times-New-Roman/"/>
 
 
 
 
 
-  <title>能上QQ，但打不开网页的解决办法 | linyen's blog</title>
+  <title>matplotlib同时使用宋体和Times New Roman | linyen's blog</title>
   
 
 
@@ -255,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/29/%E8%83%BD%E4%B8%8AQQ%EF%BC%8C%E4%BD%86%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/08/26/matplotlib%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E5%AE%8B%E4%BD%93%E5%92%8CTimes-New-Roman/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -272,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">能上QQ，但打不开网页的解决办法</h1>
+          <h1 class="post-title" itemprop="name headline">matplotlib同时使用宋体和Times New Roman</h1>
         
 
         <div class="post-meta">
@@ -284,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-29T13:21:43+08:00">
-                2021-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-26T21:49:39+08:00">
+                2021-08-26
               </time>
             
 
@@ -307,8 +308,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
+                  <a href="/categories/%E7%94%BB%E5%9B%BE/" itemprop="url" rel="index">
+                    <span itemprop="name">画图</span>
                   </a>
                 </span>
 
@@ -338,7 +339,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  799
+                  597
                 </span>
               
 
@@ -375,17 +376,14 @@
       
 
       
-        <p>参考：<a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hans/windows/forum/windows_vista-networking/%E5%8F%AA%E8%83%BD%E4%B8%8Aqq%E6%89%93%E4%B8%8D/c5c9b495-4818-4f1e-b845-49e0cf6d5043">只能上QQ，打不开网页怎么回事？</a></p>
-<h1 id="感染了病毒所致"><a href="#感染了病毒所致" class="headerlink" title="感染了病毒所致"></a>感染了病毒所致</h1><p>这种情况往往表现在打开IE时，在IE界面的左下框里提示：正在打开网页，但老半天没响应。在任务管理器里查看进程，（进入方法，把鼠标放在任务栏上，按右键—任务管理器—进程）看看CPU的占用率如何，如果是100%，可以肯定，是感染了病毒，这时你想运行其他程序简直就是受罪。这就要查查是哪个进程贪婪地占用了CPU资源。 </p>
-<p>找到后，最好把名称记录下来，然后点击结束，如果不能结束，则要启动到安全模式下把 该东东删除，还要进入注册表里，（方法：开始—运行，输入regedit）在注册表对话框里， 点编辑—查找，输入那个程序名，找到后，点鼠标右键删除，然后再进行几次的搜索，往往能彻底删除干净。 </p>
-<p>有很多的病毒，杀毒软件无能为力时，唯一的方法就是手动删除。 </p>
-<h1 id="与设置代理服务器有关"><a href="#与设置代理服务器有关" class="headerlink" title="与设置代理服务器有关"></a>与设置代理服务器有关</h1><p>有些朋友，出于某些方面考虑，在浏览器里设置了代理服务器（控制面板—Internet选项—连接—局域网设置—为LAN使用代理服务器），设置代理服务器是不影响QQ联网的，因为QQ用的是4000端口，而访问互联网使用的是80或8080端口。这就是很多的朋友们不明白为什么QQ能上，而网页不能打开的原因。而代理服务器一般不是很稳定，有时侯能上，有时候不能上。 </p>
-<p>如果有这样设置的，请把代理取消就可以了。 对于win10来说，找到如下图的页面，把“使用代理服务器“的选项给关掉就好了。</p>
-<p><img src="/2021/05/29/%E8%83%BD%E4%B8%8AQQ%EF%BC%8C%E4%BD%86%E6%89%93%E4%B8%8D%E5%BC%80%E7%BD%91%E9%A1%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg" alt="关掉“使用代理服务器“的选项"></p>
-<h1 id="DNS服务器解释出错"><a href="#DNS服务器解释出错" class="headerlink" title="DNS服务器解释出错"></a>DNS服务器解释出错</h1><p>所谓DNS，即域名服务器（Domain Name Server）,它把域名转换成计算机能够识别的IP地 址，如深圳热线（<a target="_blank" rel="noopener" href="http://www.szonline.net/">www.szonline.net</a>）对应的IP地址是202.96.154.6。如果DNS服务器出错，则无法进行域名解释，自然不能上网了。<br>如果是这种情况，有时候是网络服务接入商即ISP的问题，可打电话咨询ISP；有时候则是路由器或网卡的问题，无法与ISP的DNS服务连接。 </p>
-<p>这种情况的话，可把路由器关一会再开，或者重新设置路由器。或者是网卡无法自动搜寻到DNS的服务器地址，可以尝试用指定的DNS服务器地址。在网络的属性里进行，（控制面板—网络和拔号连接—本地连接—右键属性—TCP/IP协议—属性—使用下面的DNS服务器地址）。 </p>
-<p>不同的ISP有不同的DNS地址，如电信常用的是202.96.134.133(主用) 202.96.128.68（备用）</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>我上次出现这样的问题就是因为使用了别人的机场，设置了代理，最后弄了很久才解决了问题。所以说，遵纪守法就没有这么多麻烦事。</p>
+        <p>一般论文要求中文宋体、西文Times New Roman，但是matplotlib并没有现成的这个字体，也不能在全局字体设置中将中文、西文分别设置。目前网上的方法主要是两种，一种是寻找近似字体来替代，比如方正宋体，但多多少少还是会有差别；另一种是自己将宋体和Times New Roman合并，制作一个新的字体“TimesSong”。</p>
+<p>我自己选择了第二种方法，制作了“TimesSong”字体，但是在matplotlib中始终不能将其设置为全局字体。因此退而求其次，将全局字体设置成“Times New Roman”，在有中文出现的地方再使用局部字体“TimesSong”。这里将全局字体设置成“Times New Roman”主要考虑到我们画的图基本上都会有数字，尤其是刻度标签。</p>
+<p>下面是示例代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.font_manager <span class="keyword">import</span> FontProperties</span><br><span class="line"></span><br><span class="line">matplotlib.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>]=<span class="string">&#x27;Times New Roman&#x27;</span> <span class="comment">#设置默认字体</span></span><br><span class="line">matplotlib.rcParams[<span class="string">&#x27;font.size&#x27;</span>] =<span class="number">40</span> <span class="comment"># 调整字体大小</span></span><br><span class="line">matplotlib.rcParams[<span class="string">&#x27;mathtext.fontset&#x27;</span>] =<span class="string">&#x27;stix&#x27;</span>  <span class="comment"># 数学公式</span></span><br><span class="line">matplotlib.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>  <span class="comment"># 显示负号</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入自己制作的新字体（times+宋体），引号是新字体所在的位置</span></span><br><span class="line">myfont = FontProperties(fname=<span class="string">r&quot;C:\Users\我\AppData\Local\Microsoft\Windows\Fonts\timesSong.ttf&quot;</span>) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fig, axs = plt.subplots(nrows=<span class="number">1</span>, ncols=<span class="number">1</span>, figsize=(<span class="number">20</span>,<span class="number">10</span>))</span><br><span class="line">x = np.linspace(<span class="number">-10</span>,<span class="number">10</span>,<span class="number">200</span>)</span><br><span class="line">y = x</span><br><span class="line">plt.plot(x,y)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&quot;横轴/单位$\\it&#123;italics\/R^&#123;-2&#125;&#125;$&quot;</span>,fontproperties=myfont)</span><br><span class="line">axs.set_ylabel(<span class="string">&#x27;in-situ measurements (test)发给答复&#x27;</span>,fontproperties=myfont)</span><br><span class="line">plt.title(<span class="string">&quot;标题&quot;</span>,fontproperties=myfont)</span><br><span class="line">plt.text(<span class="number">0</span>,<span class="number">0</span>,<span class="string">&#x27;-+(a)0123 45/6789sdfsdfsdhqNa$\/R^&#123;-2&#125;=5$&#x27;</span>)</span><br><span class="line">plt.text(<span class="number">0</span>,<span class="number">5</span>,<span class="string">&#x27;-+(a)0123 45/6789sdfsdfsdhqNa&#x27;</span>,fontproperties=myfont)</span><br><span class="line">plt.text(<span class="number">0</span>,<span class="number">-5</span>,<span class="string">&#x27;-+(a)0123 45/678.9宋。体，这里fsd, hqNa&#x27;</span>,fontproperties=myfont)</span><br><span class="line">plt.text(<span class="number">0</span>,<span class="number">-8</span>,<span class="string">&#x27;$\mathrm&#123;\\it&#123;R&#125;^&#123;-2&#125;=5&#125;$&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line"><span class="comment"># plt.savefig(r&#x27;C:\Users\我\Desktop\test.png&#x27;,dpi =100)</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>出来的图如下：</p>
+<p><img src="/2021/08/26/matplotlib%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8%E5%AE%8B%E4%BD%93%E5%92%8CTimes-New-Roman/test.jpg" alt="结果展示图"></p>
+<p>下面讲讲如何将宋体和Times New Roman合并成一个新字体。其实就是使用了一个工具，工具来源及使用方法见 <a target="_blank" rel="noopener" href="https://github.com/nowar-fonts/Warcraft-Font-Merger">字体合并工具</a>，操作很简单。制作好后将文件名改成你想要的名字，并安装该字体（右键选择安装，或将该文件复制到<code>C:\Windows\Fonts</code>目录下）。然后就可以参考上面所示的代码开始画图了。</p>
 
       
     </div>
@@ -427,7 +425,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag"># 网络</a>
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/matplotlib/" rel="tag"># matplotlib</a>
           
         </div>
       
@@ -440,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/14/%E7%94%A8Sacred%E8%BF%9B%E8%A1%8C%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E9%AA%8C%E7%AE%A1%E7%90%86/" rel="next" title="用Sacred进行机器学习实验管理">
-                <i class="fa fa-chevron-left"></i> 用Sacred进行机器学习实验管理
+              <a href="/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/" rel="next" title="修改 jupyter notebook 主题">
+                <i class="fa fa-chevron-left"></i> 修改 jupyter notebook 主题
               </a>
             
           </div>
@@ -449,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/06/17/%E4%BF%AE%E6%94%B9-jupyter-notebook-%E4%B8%BB%E9%A2%98/" rel="prev" title="修改 jupyter notebook 主题">
-                修改 jupyter notebook 主题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -504,17 +500,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -588,22 +575,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%84%9F%E6%9F%93%E4%BA%86%E7%97%85%E6%AF%92%E6%89%80%E8%87%B4"><span class="nav-number">1.</span> <span class="nav-text">感染了病毒所致</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8E%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%89%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">与设置代理服务器有关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%A7%A3%E9%87%8A%E5%87%BA%E9%94%99"><span class="nav-number">3.</span> <span class="nav-text">DNS服务器解释出错</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
